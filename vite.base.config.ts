@@ -51,7 +51,6 @@ export function getBuildDefine(env: ConfigEnv<'build'>) {
     };
     return { ...acc, ...def };
   }, {} as Record<string, any>);
-
   return define;
 }
 

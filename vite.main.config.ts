@@ -32,7 +32,7 @@ export default defineConfig((env) => {
       // Load the Node.js entry.
       alias: {
         "@": path.resolve(__dirname, "./src"),
-        "WebSdk": path.resolve(__dirname, "./modules/websdk/index.js"),
+        "WebSdK": path.resolve(__dirname, "./modules/websdk/index.js"),
       },
       mainFields: ["module", "jsnext:main", "jsnext"],
     },

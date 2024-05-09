@@ -20,6 +20,7 @@ export default defineConfig((env) => {
       },
     },
     plugins: [pluginExposeRenderer(name)],
+    define:[{    "WebSdK": path.resolve(__dirname, "./modules/websdk/index.js"),}],
     resolve: {
       preserveSymlinks: true,
       alias: {

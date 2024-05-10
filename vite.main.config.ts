@@ -23,7 +23,7 @@ export default defineConfig((env) => {
         formats: ["cjs"],
       },
       rollupOptions: {
-        external: ['WebSdk', ...external],
+        external: [ ...external],
       },
     },
     plugins: [react(), pluginHotRestart("restart")],
@@ -32,7 +32,6 @@ export default defineConfig((env) => {
       // Load the Node.js entry.
       alias: {
         "@": path.resolve(__dirname, "./src"),
-        "WebSdK": path.resolve(__dirname, "./modules/websdk/index.js"),
       },
       mainFields: ["module", "jsnext:main", "jsnext"],
     },

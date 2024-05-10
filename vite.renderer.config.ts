@@ -2,6 +2,8 @@ import type { ConfigEnv, UserConfig } from 'vite';
 import { defineConfig } from 'vite';
 import { pluginExposeRenderer } from './vite.base.config';
 import path from 'path';
+import createExternal from 'vite-plugin-external';
+
 
 // https://vitejs.dev/config
 export default defineConfig((env) => {
@@ -19,13 +21,17 @@ export default defineConfig((env) => {
         external: ['WebSdk'],
       },
     },
-    plugins: [pluginExposeRenderer(name)],
-    define:[{    "WebSdK": path.resolve(__dirname, "./modules/websdk/index.js"),}],
+    plugins: [pluginExposeRenderer(name),   
+      createExternal({
+      externals: {
+        WebSdk:  "WebSdk",
+      }
+    }),],
+    define:[],
     resolve: {
       preserveSymlinks: true,
       alias: {
         "@": path.resolve(__dirname, "./src"),
-        "WebSdK": path.resolve(__dirname, "./modules/websdk/index.js"),
       },
     },
     clearScreen: false,

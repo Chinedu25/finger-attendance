@@ -12,7 +12,11 @@
     "paths": {
       "@/*": [
         "./src/*"
+      ],
+      "WebSdk": [
+        "./modules/websdk/index.js"
       ]
+
     },
     "outDir": "dist",
     "moduleResolution": "node",
